@@ -378,12 +378,14 @@ require("dotenv").config();
 
 const app = express();
 
-// Production CORS configuration
 app.use(
   cors({
     origin: [
-      "https://shuleai.onrender.com/",
-      "http://127.0.0.1:5502/index.html",
+      "https://shuleai.onrender.com",
+      "http://127.0.0.1:5502", // Correct origin
+      "http://localhost:3000",
+      "http://localhost:5502",
+      "http://localhost:5502", // Duplicate, but harmless
     ],
     credentials: true,
   })
